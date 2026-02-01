@@ -5,7 +5,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
 # load dataset
-df = pd.read_csv("/Users/sauravgupta/Desktop/project 1/src/civic_project/civic_issues.csv")
+import os
+import pandas as pd
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_PATH = os.path.join(BASE_DIR, "civic_issues.csv")
+
+df = pd.read_csv(CSV_PATH)
 
 X = df["text"]
 y = df["label"]
